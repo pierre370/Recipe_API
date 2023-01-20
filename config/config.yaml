@@ -1,0 +1,3 @@
+imports:
+  - { resource: 'packages/dev/monolog.yaml' }
+    - { resource: '@LexikJWTAuthenticationBundle/Resources/config/config.yaml' }

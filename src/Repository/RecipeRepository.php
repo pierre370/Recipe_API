@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Receipts;
+use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Receipts>
+ * @extends ServiceEntityRepository<Recipe>
  *
- * @method Receipts|null find($id, $lockMode = null, $lockVersion = null)
- * @method Receipts|null findOneBy(array $criteria, array $orderBy = null)
- * @method Receipts[]    findAll()
- * @method Receipts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Recipe|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Recipe|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Recipe[]    findAll()
+ * @method Recipe[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ReceiptsRepository extends ServiceEntityRepository
+class RecipeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Receipts::class);
+        parent::__construct($registry, Recipe::class);
     }
 
-    public function add(Receipts $entity, bool $flush = false): void
+    public function add(Recipe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ReceiptsRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Receipts $entity, bool $flush = false): void
+    public function remove(Recipe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ReceiptsRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Receipts[] Returns an array of Receipts objects
+//     * @return Recipe[] Returns an array of Recipe objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ReceiptsRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Receipts
+//    public function findOneBySomeField($value): ?Recipe
 //    {
 //        return $this->createQueryBuilder('r')
 //            ->andWhere('r.exampleField = :val')
